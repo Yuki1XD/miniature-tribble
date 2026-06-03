@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal do Administrador</title>
+
+    <link rel="stylesheet" href="portal_admin.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <script src="portais.js" defer></script>
+
+</head>
+<body>
+    
+    <!-- Menu lateral -->
+
+    <div  id="menuSide">
+
+
+        <!-- Informações pessoais do inicio do menu lateral -->
+
+        <div class="viewPerfil">
+
+            <div>
+                <img src="/imgs/24styles-moodeng-bite-bfmh-videoSixteenByNineJumbo1600.jpg" class="imgPerfil">
+            </div>
+
+            <div class="namePerfil">
+
+                <h3>Nome do Admin</h3>
+                <p>Administrador</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Botões do menu lateral -->
+        
+        <div class="tabs">
+
+            <button class="buttonTab" content-id="start"><i class="fi fi-rr-home"></i> Inicio</button>
+
+            <button class="buttonTab" content-id="approveProjects"><i class="fi fi-rr-add"></i> Aprovar Projetos</button>
+
+            <button class="buttonTab" content-id="statistic"><i class="fi fi-rr-folder-open"></i> Estatísticas</button>
+
+            <button class="buttonTab" content-id="manageUsers"><i class="fi fi-rr-folder-open"></i> Gerenciar Usuários</button>
+
+            <button class="buttonTab" content-id="allProjects"><i class="fi fi-rr-folder-open"></i> Todos os Projetos</button>
+
+            <button class="buttonTab" content-id="configurationsAdmin"><i class="fi fi-rr-settings"></i> Configurações</button>
+
+            <button class="buttonTab" content-id="exit" id="exitTabButton"><i class="fi fi-rr-address-card"></i>Sair</button>
+
+
+        </div> 
+
+    </div>
+
+
+    <!-- Cabeçalho da pagina -->
+
+    <header>
+
+        <div id="header">
+
+            <div class="menuBurguer">
+
+                <button class="menuButton" id="menuButton">
+                    <span>
+                        <div class="linha"></div>
+                        <div class="linha"></div>
+                        <div class="linha"></div>
+                    </span>
+                </button>
+
+            </div>
+            
+            <h1 class="nomePainel">Painel Administrador</h1>
+
+        </div>
+
+    </header>
+
+    <div id="contentContainerId">
+
+        <!-- Aba de Inicio do Adiminstrador - Erik -->
+
+        <div class="contentTab show" id="start">
+
+            <header class="header">
+                <h1>Painel Senac</h1>
+            </header>
+
+            <section class="welcome-banner bg-admin">
+                <h2>Painel do Administrador</h2>
+                <p>Visão geral da plataforma</p>
+            </section>
+
+            <section class="cards-grid" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="card">
+                    <div class="card-icon text-orange">
+                        <i class="fi-rr-users"></i>
+                    </div>
+                    <div class="card-details"><h3>345</h3><p>Total de Alunos</p></div>
+                </div>
+                <div class="card">
+                    <div class="card-icon text-blue">
+                        <i class="fi-rr-users"></i>
+                    </div>
+                    <div class="card-details"><h3>28</h3><p>Professores</p></div>
+                </div>
+                <div class="card">
+                    <div class="card-icon text-orange">
+                        <i class="fi-rr-folder-open"></i>
+                    </div>
+                    <div class="card-details"><h3>156</h3><p>Projetos Publicados</p></div>
+                </div>
+                <div class="card">
+                    <div class="card-icon text-blue">
+                        <i class="fi-rr-chart-bar"></i>
+                    </div>
+                    <div class="card-details"><h3>12</h3><p>Pendentes</p></div>
+                </div>
+            </section>
+
+            <section class="recent-activity">
+                <h2>Atividade Recente do Sistema</h2>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-text">
+                            <span class="dot dot-green"></span>
+                            <p>Novo professor cadastrado: <strong>Maria Eduarda</strong></p>
+                        </div>
+                        <span class="activity-time">Há 1 hora</span>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-text">
+                            <span class="dot dot-orange"></span>
+                            <p>15 novos projetos publicados hoje</p>
+                        </div>
+                        <span class="activity-time">Há 2 horas</span>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-text">
+                            <span class="dot dot-blue"></span>
+                            <p>Sistema atualizado para <strong>versão 2.1</strong></p>
+                        </div>
+                        <span class="activity-time">Há 1 dia</span>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Aba de Aprovar Projetos do Adminstrador - Gabriel Felipe -->
+
+        <div class="contentTab" id="approveProjects">
+
+
+            <!-- Titulo e descrição -->
+            <div class="tittleContentTab">
+
+                <h1>Aprovar Projetos</h1>
+
+                <p>Clique em "Ver Detalhes" para analisar e aprovar ou rejeitar cada projeto.</p>
+
+            </div>
+
+            <!-- Filtragem de Projetos para serem analisados -->
+            <div class="filterContainer">
+
+                <div class="searchBarStyle">
+
+                    <div>
+                        <i class="fi fi-rr-search"></i>
+                    </div>
+
+                    <input type="text" placeholder="Pesquisar projetos..." class="searchInput">
+
+
+                </div>
+
+                <select name="alfabeticOrder" class="selectFilter">
+                    <option value="az_order">Ordenar A-Z</option>
+                    <option value="za_order">Ordernar Z-A</option>
+                </select>
+
+                <select name="dateOrder" class="selectFilter">
+                    <option value="more_new">Mais Recentes</option>
+                    <option value="more_old">Mais Antigos</option>
+                </select>
+
+                <select name="classOrder" class="selectFilter">
+                    <option value="class_20241-A">TI-2024-C</option>
+                    <option value="class_20241-B">TI-2024-B</option>
+                </select>
+
+                <select name="analyzedOrder" class="selectFilter">
+                    <option value="recife">Arguardando Analise</option>
+                    <option value="olinda">Analise Enviada</option>
+                </select>
+
+
+            </div>
+
+            <!-- Projetos a serem analisados -->
+            <div class="ProjectAnalizyingContainer">
+
+                <div class="noResultsForSearch">
+
+                    <h2>Nenhum resultado encontrado.</h2>
+
+                </div>
+
+                <div class="ProjectAnalizying">
+
+                    <img src="/imgs/SteveJobs.webp">
+
+                    <div class="textContentOfProject">
+
+                        <h2>Steve Jobs</h2>
+                        <p>Descrição do projeto</p>
+
+                        <div class="pincipalInformationsOfProject">
+
+                            <p>Participantes: Guido van Rossum...</p>
+                            <p>Turma: TI-2024-A</p>
+                            <p>Data: 01/11/2025</p>
+                            <div class="teacherAnalized"><p>Analise Enviada</p></div>
+
+                        </div>
+
+                        <div class="teachAnalizyOfProject">
+                            <p><strong>Analise do Professor:</strong></p>
+                            <p>Aqui fica a analise do professor.</p>
+                        </div>
+
+                        
+
+                        <button data-modal="SteveJobs" class="openModal">Ver Detalhes</button>
+
+                        <dialog id="SteveJobs" class="modalWindow">
+
+                            <div class="tiitleOfModal">
+                                <h1>Steve Jobs</h1>
+                                <button data-modal="SteveJobs" class="closeModal"><i class="fi-rr-x"></i></button>
+                            </div>
+
+                            <div>
+
+                                <div class="listOfContent">
+
+                                    <i class="fi fi-rr-users"></i>
+
+                                    <div>
+
+                                        <p class="listOfContentTittle">Criadores</p>
+                                        <p>Guido van Rossum e Margaret Hamilton</p>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="listOfContent">
+
+                                    <i class="fi fi-rr-calendar"></i>
+
+                                    <div>
+
+                                        <p class="listOfContentTittle">Data de Postagem</p>
+                                        <p>01/11/2025</p>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="listOfContent">
+
+                                    <i class="fi fi-rr-document"></i>
+
+                                    <div>
+
+                                        <p class="listOfContentTittle">Categoria</p>
+                                        <p>Criação, Tecnologia e Smartphone</p>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="listOfContent">
+
+                                    <i class="fi fi-rr-users"></i>
+
+                                    <div >
+
+                                        <p class="listOfContentTittle">Turma</p>
+                                        <p>TI-2024-A</p>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="listOfContent">
+
+                                    <i class="fi fi-rr-users"></i>
+
+                                    <div>
+
+                                        <p class="listOfContentTittle">Professor Orientador</p>
+                                        <p>Alan Turing</p>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="listOfContent">
+
+                                    <i class="fi fi-rr-tags"></i>
+
+                                    <div class="listTagsForModal">
+
+                                        <p class="listOfContentTittle">Tags</p>
+
+                                        <div class="displayTagModal">
+
+                                            <div class="nameTagForModal"><p>Tecnologia</p></div>
+                                            <div class="nameTagForModal"><p>Criação</p></div>
+                                            <div class="nameTagForModal"><p>Smartphone</p></div>
+
+                                        </div>
+                                        
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="modalDescriptionStatus">
+
+                                <div class="displayTagModalStatus">
+
+                                    <p>Status</p>
+                                    <div class="statusOfAnalizy">
+                                        <p>Analise Enviada</p>
+                                    </div>
+
+                                </div>
+
+
+                                <div>
+
+                                    <p>Descrição:</p>
+                                    <p>O texto da descrição estara aqui</p>
+
+                                </div>
+
+                            </div>
+
+                            <div></div>
+
+                            <div>
+
+                                <h2>Nota de Aprovação ou Rejeição</h2>
+
+                                <textarea rows="4" wrap="hard" cols="40" class="addAnalizyForProject" maxlength="50" placeholder="Escreva uma observação"></textarea>
+
+                            </div>
+
+                            <div class="buttonsModalArea">
+
+                                <button class="approveProjectsButton">Aprovar e Publicar</button>
+                                <button class="rejectProjectsButton">Rejeitar</button>
+                                <button class="alterVisibilityButton"><i class="fi-rr-eye"></i> Alterar Visibilidade</button>
+                                
+                            </div>
+
+                            
+
+                        </dialog>
+
+
+                    </div>
+
+                </div>
+
+                
+
+            </div>
+
+        </div>
+            
+
+        <!-- Aba de Estatistica do Adiminstrador - Maria Sophia -->
+
+        <div class="contentTab" id="statistic">
+            
+            <main class="container">
+                <section class="top-bar">
+                    <h2>Estatísticas</h2>
+                        <button class="btn-pdf">📥 Gerar Relatório PDF</button>
+                </section>
+    
+                <section class="filters-section">
+                        <div class="period-container">
+                            <label>📅 Período:</label>
+                        <div class="period-buttons">
+                                <button class="btn-period active">Atual</button>
+                                    <button class="btn-period">Última Semana</button>
+                                    <button class="btn-period">Último Mês</button>
+                                    <button class="btn-period">Semestre</button>
+                                    <button class="btn-period">Ano</button>
+                        </div>
+                        </div>
+                                                                                                                                                                                                                                                        
+                        <div class="dropdowns">
+                                <select id="filtro-area">
+                                    <option value="">Filtrar por Área</option>
+                                </select>
+                                                                                                                                                                                                                                                                                                                                        <select id="filtro-tag">
+                                                                                                                                                                                                                                                                                                                                                            <option value="">Filtrar por Tag</option>
+                                                                                                                                                                                                                                                                                                                                                                            </select>
+                                                                                                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                                                                                                                </section>
+
+                                                                                                                                                                                                                                                                                                                                                                                                        <nav class="tabs">
+                                                                                                                                                                                                                                                                                                                                                                                                                    <button class="tab-item active">Visão Geral</button>
+                                                                                                                                                                                                                                                                                                                                                                                                                                <button class="tab-item">Usuários</button>
+                                                                                                                                                                                                                                                                                                                                                                                                                                            <button class="tab-item">Projetos</button>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    </nav>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            <section class="cards-grid">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="card">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="card-icon icon-up">📈</div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <h3 id="num-usuarios">+0</h3>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <p>Novos usuários no período</p>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="card">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="card-icon icon-folder">📁</div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <h3 id="num-projetos">0</h3>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <p>Projetos publicados</p>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="card">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="card-icon icon-chart">📊</div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <h3 id="taxa-aprovacao">0%</h3>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <p>Taxa de aprovação</p>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </section>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <section class="metrics-section">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="metric-box">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <h3>Projetos por Categoria</h3>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div id="container-categorias" class="progress-list">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="progress-item">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="progress-labels">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <span>Tecnologia da Informação</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <span class="count-val">45</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="progress-bar"><div class="progress-fill orange" style="width: 45%;"></div></div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="progress-item">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="progress-labels">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <span>Design e Comunicação</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <span class="count-val">32</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="progress-bar"><div class="progress-fill blue" style="width: 32%;"></div></div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="metric-box">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <h3>Tags Mais Utilizadas</h3>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div id="container-tags" class="progress-list">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="progress-item">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="progress-labels">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <span>React</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <span class="count-val">28</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="progress-bar"><div class="progress-fill orange" style="width: 56%;"></div></div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="progress-item">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="progress-labels">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <span>Node.js</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <span class="count-val">22</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="progress-bar"><div class="progress-fill blue" style="width: 44%;"></div></div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </section>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </main>
+
+
+            
+
+        </div>
+
+        <!-- Aba de Gerenciar Usuarios do Adiminstrador - João Vitor -->
+
+        <div class="contentTab" id="manageUsers">
+
+            <main class="usuarios-container">
+                <h2>Gerenciar Usuários</h2>
+        
+                <!-- FILTROS -->
+                <div class="filtros-usuarios">
+                    <div class="pesquisa-usuarios">
+                        <i class="fi fi-rr-search"></i>
+                        <input type="text" placeholder="Pesquisar usuários...">
+                    </div>
+        
+                    <select>
+                        <option>Ordenar A-Z</option>
+                    </select>
+                    <select>
+                        <option>Tipo</option>
+                        <option>Aluno</option>
+                        <option>Professor</option>
+                    </select>
+                    <select>
+                        <option>Status</option>
+                        <option>Ativo</option>
+                        <option>Inativo</option>
+                    </select>
+        
+                    <button class="btn-filtros">
+                        <i class="fi fi-rr-settings-sliders"></i>
+                        Filtros
+                    </button>
+                </div>
+        
+                <!-- TABELA -->
+                <div class="tabela-container">
+                    <table class="tabela-usuarios">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Email</th>
+                                <th>Tipo</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>João Silva</td>
+                                <td>joao.silva@senac.com</td>
+                                <td>Aluno</td>
+                                <td><span class="status-badge status-ativo">Ativo</span></td>
+                                <td>
+                                    <button class="btn-acao"><i class="fi fi-rr-edit"></i></button>
+                                    <button class="btn-acao"><i class="fi fi-rr-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Prof. Carlos</td>
+                                <td>carlos@senac.com</td>
+                                <td>Professor</td>
+                                <td><span class="status-badge status-ativo">Ativo</span></td>
+                                <td>
+                                    <button class="btn-acao"><i class="fi fi-rr-edit"></i></button>
+                                    <button class="btn-acao"><i class="fi fi-rr-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+
+        </div>
+
+        <!-- Aba de Todos os Projetos do Adiminstrador - João Vitor -->
+
+        <div class="contentTab" id="allProjects">
+
+
+
+        </div>
+
+        <!-- Aba de Configurações do Adiminstrador - Gabriel Felipe -->
+
+        <div class="contentTab" id="configurationsAdmin">
+
+            <div class="contentApprove">
+
+                <h1>Configurações do Sistema</h1>
+
+                <div class="adminGeralConfig">
+
+                    <h2>Configurações Gerais</h2>
+
+                    <div class="optionAdminConfig">
+
+                        <div>
+
+                            <p class="nameOptionAdminConfig">Permitir cadastro de novos alunos</p>
+                            <p class="exOptionAdminConfig">Usuarios podem criar novas contas</p>
+
+                        </div>
+
+                        <div class="inputCheckboxAdminConfig">
+                            <input type="checkbox">
+                        </div>
+
+                    </div>
+                    
+
+                    <div class="optionAdminConfig">
+
+                        <div>
+
+                            <p class="nameOptionAdminConfig">Moderação automatica</p>
+                            <p class="exOptionAdminConfig">Filtro de conteudo inadequado</p>
+
+                        </div>
+
+                        <div class="inputCheckboxAdminConfig">
+                            <input type="checkbox">
+                        </div>
+                        
+
+                    </div>
+
+                    <button id="saveAdminConfig"><strong>Salvar Diretrizes</strong></button>
+
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
