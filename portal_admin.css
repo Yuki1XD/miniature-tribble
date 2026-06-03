@@ -1098,11 +1098,25 @@ body {
     cursor: pointer;
 }
 /*estatística*/
+.container {
+    width: 100%;
+    max-width: 450px; 
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Topo: Título e Botão PDF */
 .top-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
+}
+
+.top-bar h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
 .btn-pdf {
@@ -1111,40 +1125,48 @@ body {
     border: none;
     padding: 8px 14px;
     border-radius: 6px;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     cursor: pointer;
     font-weight: 600;
+    transition: background 0.2s;
 }
 
-/* Filtros */
+.btn-pdf:hover {
+    background-color: #e06d00;
+}
+
+/* Caixa de Filtros */
 .filters-section {
     border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 20px;
+    border-radius: 12px;
+    padding: 16px;
+    background-color: white;
 }
 
 .period-container label {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
+    font-weight: 600;
 }
 
 .period-buttons {
     display: flex;
-    gap: 8px;
-    margin-top: 8px;
-    overflow-x: auto;
-    padding-bottom: 5px;
+    gap: 6px;
+    margin-top: 10px;
+    overflow-x: auto; /* Permite rolar para o lado se a tela for pequena */
+    padding-bottom: 4px;
 }
 
 .btn-period {
     background: white;
     border: 1px solid var(--border-color);
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 0.8rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
     white-space: nowrap;
     cursor: pointer;
+    color: var(--text-dark);
+    transition: all 0.2s;
 }
 
 .btn-period.active {
@@ -1156,112 +1178,153 @@ body {
 .dropdowns {
     display: flex;
     gap: 10px;
-    margin-top: 15px;
+    margin-top: 14px;
 }
 
 .dropdowns select {
     flex: 1;
-    padding: 8px;
+    padding: 10px;
     border: 1px solid var(--border-color);
-    border-radius: 6px;
+    border-radius: 8px;
+    font-size: 0.8rem;
     color: var(--text-muted);
-    background-color: white;
-}
-
-/* Abas */
-.tabs {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.tab-item {
-    background: white;
-    border: 1px solid var(--border-color);
-    padding: 8px 16px;
-    border-radius: 6px;
+    background-color: #fff;
     cursor: pointer;
 }
 
-.tab-item.active {
-    background-color: var(--primary-orange);
-    color: white;
-    border-color: var(--primary-orange);
+/* Abas de Navegação (Tabs) */
+.tabs {
+    display: flex;
+    gap: 4px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 2px;
 }
 
-/* Cards */
+.tab-item {
+    background: none;
+    border: none;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: var(--text-muted);
+    position: relative;
+}
+
+.tab-item.active {
+    color: var(--primary-orange);
+    font-weight: 600;
+}
+
+/* Linha laranja embaixo da aba ativa */
+.tab-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-orange);
+    border-radius: 3px;
+}
+
+/* Grid de Cards de Indicadores */
 .cards-grid {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-bottom: 25px;
+    gap: 12px;
 }
 
 .card {
     border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 20px;
+    border-radius: 12px;
+    padding: 16px;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.card-icon {
+    font-size: 1.2rem;
+    margin-bottom: 2px;
 }
 
 .card h3 {
     font-size: 1.8rem;
-    margin: 8px 0 4px 0;
+    font-weight: 700;
+    color: var(--text-dark);
 }
 
 .card p {
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
-/* Gráficos de barra horizontais */
+/* Seções de Listas e Gráficos de Progresso */
+.metrics-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
 .metric-box {
     border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
+    border-radius: 12px;
+    padding: 18px;
+    background-color: white;
 }
 
 .metric-box h3 {
-    font-size: 1rem;
-    margin-bottom: 15px;
-    color: #444;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--text-dark);
 }
 
 .progress-list {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 14px;
 }
 
 .progress-item {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 6px;
 }
 
 .progress-labels {
     display: flex;
     justify-content: space-between;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
 .count-val {
-    font-weight: 600;
+    font-weight: 700;
 }
 
+/* Estrutura da barra cinza de fundo */
 .progress-bar {
     width: 100%;
-    background-color: #f0f0f0;
+    background-color: #f1f3f5;
     height: 8px;
     border-radius: 4px;
     overflow: hidden;
 }
 
+/* O preenchimento colorido interno */
 .progress-fill {
     height: 100%;
     border-radius: 4px;
+    transition: width 0.5s ease-in-out; /* Efeito suave ao carregar */
 }
 
-.progress-fill.orange { background-color: var(--primary-orange); }
-.progress-fill.blue { background-color: var(--secondary-blue); }
+/* Cores alternadas conforme a foto */
+.progress-fill.orange {
+    background-color: var(--primary-orange);
+}
+
+.progress-fill.blue {
+    background-color: var(--secondary-blue);
+}
